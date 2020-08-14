@@ -1,21 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import Home from './screens/home';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+import DrawerMenu from './routes/drawer'
+
+const getFonts = () => Font.loadAsync({
+  'open-sans-regular': require('./assets/fonts/OpenSans-Regular.ttf'),
+  'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
+});
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+  const [fontsLoaded, setFontsLoaded] = useState(false);
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  if (fontsLoaded) {
+    return (
+      <DrawerMenu />
+    );
+  } else {
+    return (
+      <AppLoading 
+        startAsync={getFonts} 
+        onFinish={() => setFontsLoaded(true)} 
+      />
+    )
+  }
+
+}
