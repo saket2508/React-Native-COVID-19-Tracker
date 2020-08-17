@@ -10,14 +10,6 @@ const goHome = (navigation) => {
     navigation.goBack();
 }
 
-function About({ navigation }){
-    return(
-         <View style={{flex:1,alignItems:'center',justifyContent:'center'}}>
-             <Button onPress={() => navigation.goBack()} title="go back to the home page"/>
-         </View>
-    )
-}
-
 export default function AboutStack({navigation}){
     return(
         <Stack.Navigator
@@ -31,7 +23,7 @@ export default function AboutStack({navigation}){
                         backgroundColor: '#607d8b',
                     },
                     headerLeft:()=>(
-                        <MaterialIcons style={{paddingLeft:15}} name="chevron-left" size={25} color="#fff" onPress={() => goHome(navigation)}/>
+                        <MaterialIcons style={{paddingLeft:15}} name="arrow-back" size={25} color="#fff" onPress={() => goHome(navigation)}/>
                     ),
                     headerTintColor: '#fff',
                     headerTitleStyle: {

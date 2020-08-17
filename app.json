@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Sandbox",
-    "slug": "Sandbox",
+    "name": "COVID-19 Tracker",
+    "slug": "covid-19-tracker",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/images/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#fff",
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -21,6 +21,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "",
+    "githubUrl": "https://github.com/saket2508/React-Native-COVID-19-Tracker"
   }
 }

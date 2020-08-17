@@ -1,13 +1,11 @@
 import * as React from 'react';
 import { 
     createDrawerNavigator,
-    DrawerContentScrollView,
-    DrawerItemList,
-    DrawerItem, 
 } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeStack from '../routes/homeStack';  
 import AboutStack from '../routes/aboutStack';
+import IndiaStack from '../routes/indiaStack';
 import DrawerContent  from '../screens/drawerContent';
 
 const Drawer = createDrawerNavigator();
@@ -20,6 +18,7 @@ export default function DrawerMenu(){
             initialRouteName="Home"
             >
             <Drawer.Screen name="Home" component={HomeStack} />
+            <Drawer.Screen name="India" component={IndiaStack} />
             <Drawer.Screen name="About" component={AboutStack} />
           </Drawer.Navigator>
         </NavigationContainer>

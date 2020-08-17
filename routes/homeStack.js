@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-import { NavigationContainer, BaseRouter, Text, View } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from '../screens/home'
 import ReviewDetails from '../screens/reviewDetails'
-import { globalStyles } from '../styles/global';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Avatar } from "react-native-elements";
 
 
 const Stack= createStackNavigator()
@@ -23,7 +20,7 @@ export default function HomeStack({ navigation }){
                     name="Home" 
                     component={Home}
                     options={{
-                        title: 'WORLD STATS',
+                        title: 'World Stats',
                         headerTitleStyle:{
                             fontFamily:'open-sans-bold'
                         },
@@ -45,7 +42,7 @@ export default function HomeStack({ navigation }){
                             backgroundColor: '#607d8b',
                         },
                         headerLeft:()=>(
-                            <MaterialIcons style={{paddingLeft:15}} name="chevron-left" size={25} color="#fff" onPress={() => navigation.goBack()}/>
+                            <MaterialIcons style={{paddingLeft:15}} name="arrow-back" size={25} color="#fff" onPress={() => navigation.goBack()}/>
                         ),
                         headerTintColor: '#fff',
                         headerTitleStyle: {
