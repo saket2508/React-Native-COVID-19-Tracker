@@ -25,7 +25,7 @@ export default function HomeStack({ navigation }){
                             fontFamily:'open-sans-bold'
                         },
                         headerStyle: {
-                            backgroundColor: '#607d8b',
+                            backgroundColor: '#343a40',
                         },
                         headerLeft:()=>(
                             <MaterialIcons style={{paddingLeft:15}} name="menu" size={25} color="#fff" onPress={() => openMenu(navigation)}/>
@@ -39,7 +39,7 @@ export default function HomeStack({ navigation }){
                     options={({ route }) => ({ 
                         title: route.params.name,
                         headerStyle: {
-                            backgroundColor: '#607d8b',
+                            backgroundColor: '#343a40',
                         },
                         headerLeft:()=>(
                             <MaterialIcons style={{paddingLeft:15}} name="arrow-back" size={25} color="#fff" onPress={() => navigation.goBack()}/>

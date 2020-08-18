@@ -29,16 +29,16 @@ function PageContent(props){
               }
             >
                <View>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       A cumulative total of <Text style={{fontFamily:'open-sans-bold'}}>{props.cases}</Text> cases have been reported till now in {props.name}, of which <Text style={{fontFamily:'open-sans-bold'}}>{props.active}</Text> are active and <Text style={{fontFamily:'open-sans-bold'}}>{props.recovered}</Text> cured. <Text style={{fontFamily:'open-sans-bold'}}>{props.critical}</Text> people are under critical care.{props.index}
                  </Text>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       <Text style={{fontFamily:'open-sans-bold'}}>{props.newCases}</Text> new cases have been confirmed today along with <Text style={{fontFamily:'open-sans-bold'}}>{props.newDeaths}</Text> fatalities. The death toll due to COVID-19 is  <Text style={{fontFamily:'open-sans-bold'}}>{props.deaths}</Text>. {props.name} has a case-fatality ratio of <Text style={{fontFamily:'open-sans-bold'}}>{props.caseFatalityRatio}%</Text>
                  </Text>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       The infection rate per million is <Text style={{fontFamily:'open-sans-bold'}}>{props.casesPerMillion}</Text> and death rate per million is <Text style={{fontFamily:'open-sans-bold'}}>{props.deathsPerMillion}</Text>.
                  </Text>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       The country has conducted a total of <Text style={{fontFamily:'open-sans-bold'}}>{props.tests}</Text> tests with a resulting test positivity ratio of <Text style={{fontFamily:'open-sans-bold'}}>{props.testPositivityRatio}%</Text>. About <Text style={{fontFamily:'open-sans-bold'}}>{props.percentageTested}%</Text> of the population has been tested.
                  </Text>
                 </View>
@@ -60,16 +60,16 @@ function PageContent(props){
               }
             >
                <View>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       A cumulative total of <Text style={{fontFamily:'open-sans-bold'}}>{props.cases}</Text> cases have been reported worldwide, with <Text style={{fontFamily:'open-sans-bold'}}>{props.active}</Text> active and <Text style={{fontFamily:'open-sans-bold'}}>{props.recovered}</Text> cured. <Text style={{fontFamily:'open-sans-bold'}}>{props.critical}</Text> people are under critical care.
                  </Text>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       <Text style={{fontFamily:'open-sans-bold'}}>{props.newCases}</Text> new cases have been confirmed today. New infections are growing at a weekly average of <Text style={{fontFamily:'open-sans-bold'}}>3.2%.</Text>
                  </Text>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       The global death toll due to COVID-19 is <Text style={{fontFamily:'open-sans-bold'}}>{props.deaths}</Text> with <Text style={{fontFamily:'open-sans-bold'}}>{props.newDeaths}</Text> fatalities today. The case-fatality ratio is <Text style={{fontFamily:'open-sans-bold'}}>{props.caseFatalityRatio}%.</Text>
                  </Text>
-                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:15}}>
+                 <Text style={{marginBottom:14, fontFamily:'open-sans-regular', color:'#616161', fontSize:16}}>
                       The global infection rate per million is around <Text style={{fontFamily:'open-sans-bold'}}>{props.casesPerMillion}</Text>. The death rate per million is <Text style={{fontFamily:'open-sans-bold'}}>{props.deathsPerMillion}</Text>.
                  </Text>
                 </View>

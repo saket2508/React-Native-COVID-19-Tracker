@@ -22,7 +22,6 @@ export default function DrawerContent(props) {
         </View>
         <View style={globalStyles.DrawerItemContainer}>
             <DrawerItem labelStyle={globalStyles.DrawerItem} icon={() => (<FontAwesome5 name="globe-europe" size={20} color="#616161"/>)} label="World" onPress={() => props.navigation.navigate('Home')} />
-            <DrawerItem labelStyle={globalStyles.DrawerItem} icon={() => (<MaterialIcons name="flag" size={20} color="#616161"/>)} label="India" onPress={() => props.navigation.navigate('India')} />
             <DrawerItem labelStyle={globalStyles.DrawerItem} icon={() => (<MaterialIcons name="info" size={20} color="#616161"/>)} label="About" onPress={() => props.navigation.navigate('About')} />
         </View>
        </View>

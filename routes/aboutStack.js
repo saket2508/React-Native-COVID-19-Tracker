@@ -20,7 +20,7 @@ export default function AboutStack({navigation}){
                 options={{
                     title: 'About',
                     headerStyle: {
-                        backgroundColor: '#607d8b',
+                        backgroundColor: '#343a40',
                     },
                     headerLeft:()=>(
                         <MaterialIcons style={{paddingLeft:15}} name="arrow-back" size={25} color="#fff" onPress={() => goHome(navigation)}/>

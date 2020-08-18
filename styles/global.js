@@ -17,7 +17,7 @@ export const globalStyles = StyleSheet.create({
     alignItems:'center',
   },
   DrawerContainer:{
-    backgroundColor:'#607d8b',
+    backgroundColor:'#343a40',
     height:175
   },
   DrawerHeader:{
@@ -71,6 +71,7 @@ export const globalStyles = StyleSheet.create({
  subtitle:{
    fontSize:12,
    color: '#757575',
+   fontFamily:'open-sans-regular'
  },
  searchBar:{
   borderRadius:50,
@@ -89,7 +90,7 @@ export const globalStyles = StyleSheet.create({
   fontFamily:'open-sans-regular'
  },
  Input:{
-  marginBottom:15
+  marginBottom:10
  },
  CountryDetailsContainer:{
   flex:1,

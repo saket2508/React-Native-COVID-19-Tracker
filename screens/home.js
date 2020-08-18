@@ -4,7 +4,14 @@ import { globalStyles } from '../styles/global';
 import { ListItem, SearchBar, Icon} from 'react-native-elements'
 import { AntDesign } from '@expo/vector-icons';
 import { FlatList } from 'react-native-gesture-handler';
+import { MaterialIcons } from '@expo/vector-icons';
 
+
+function FormatTime(item){
+    let time_rn= new Date().getTime()
+    let last_updated= ((time_rn-item)/60000).toFixed(0)
+    return <Text style={{fontFamily:'open-sans-italic', color:'#9e9e9e', fontSize:13}}>Last Updated: {last_updated} mins ago</Text>
+}
 
 
 function PageContent(props){
@@ -36,6 +43,11 @@ function PageContent(props){
           inputContainerStyle= {globalStyles.searchBar}
           round
         />
+      </View>
+
+      <View style={{marginBottom:15, flexDirection:'row', justifyContent:'center'}}>
+        <MaterialIcons style={{marginRight:3, marginTop:1}} name="refresh" size={16} color="#9e9e9e"/>
+        {FormatTime(props.lastUpdated)}
       </View>
 
       <FlatList
@@ -168,6 +180,7 @@ export default function Home({ navigation }) {
   const [ loading, setLoading] = useState(false)
   const [ search, setSearch ]= useState("")
   const [ error, setError ]= useState(false)
+  const [ lastUpdated, setLastUpdated ]= useState(0)
 
 
   const updateSearch = (search) => {
@@ -190,6 +203,7 @@ export default function Home({ navigation }) {
       let world_recovered= 0 
       let world_active = 0
       let world_critical = 0
+      let lastUpdatedTemp = rawdata[0]["updated"]
 
       rawdata.map((item) => {
 
@@ -200,6 +214,12 @@ export default function Home({ navigation }) {
         world_critical+= item["critical"]
         world_newCases+= item["todayCases"]
         world_newDeaths+= item["todayDeaths"]
+
+        let lastUpdatedCmp= item["updated"]
+
+        if(lastUpdatedCmp > lastUpdatedTemp){
+          lastUpdatedTemp = lastUpdatedCmp
+        }
 
         if(item['countryInfo']['iso2']!==null){
           list.push({
@@ -242,6 +262,7 @@ export default function Home({ navigation }) {
       console.log(world_cases)
       list.push(world_data)
       list.sort((a,b) => b.cases-a.cases)
+      setLastUpdated(lastUpdatedTemp)
       setAppData(list)
       setRefreshing(false)
     }
@@ -269,6 +290,8 @@ export default function Home({ navigation }) {
       let world_active = 0
       let world_critical = 0
 
+      let lastUpdatedTemp = rawdata[0]["updated"]
+
       rawdata.map((item) => {
 
         world_cases+= item["cases"]
@@ -278,6 +301,12 @@ export default function Home({ navigation }) {
         world_critical+= item["critical"]
         world_newCases+= item["todayCases"]
         world_newDeaths+= item["todayDeaths"]
+
+        let lastUpdatedCmp= item["updated"]
+
+        if(lastUpdatedCmp > lastUpdatedTemp){
+          lastUpdatedTemp = lastUpdatedCmp
+        }
 
         if(item['countryInfo']['iso2']!==null){
           list.push({
@@ -320,6 +349,7 @@ export default function Home({ navigation }) {
       console.log(world_cases)
       list.push(world_data)
       list.sort((a,b) => b.cases-a.cases)
+      setLastUpdated(lastUpdatedTemp)
       setAppData(list)
       setLoading(false)
      }
@@ -349,7 +379,8 @@ export default function Home({ navigation }) {
       search: search,
       updateSearch: updateSearch,
       refreshing: refreshing,
-      onRefresh: onRefresh
+      onRefresh: onRefresh,
+      lastUpdated: lastUpdated
     }}/>
   );
 }
